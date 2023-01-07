@@ -41,7 +41,7 @@ const [activateCall2, setActivateCall2] = useState(false)
 const [countPanel, setCountPanel] = useState(1)
 const [panel, setPanel] = useState([])
 
-const [interruptor, setInterruptor] = useState(false)
+const [shake, setShake] = useState(false)
 const [aloneGame, setAloneGame] = useState(true)
 const [select, setSelect] = useState(10)
 const [dePlayerAVida, setdePlayerAVida] = useState(false)
@@ -399,6 +399,13 @@ const premios = (tipo) => {
   }
 }
 
+const shaker = () => {
+  setShake(true)
+  setTimeout(()=>{
+    setShake(false)
+  },1000)
+}
+
 
 const handleInput = (e) => { 
   const eve = e.target.value;
@@ -465,6 +472,7 @@ const submit = (e) => {
         setInfoLine("Esa letra no está en el panel")
         soundPlay(audioClips.fallo) 
         arrayLetras()
+        shaker()
           if (!aloneGame) { return changePlayer()}
           else{
               const numeroVidas = vidas.length -1;
@@ -502,6 +510,7 @@ const numeroVidas = vidas.length -1;
     if (!aloneGame) { return changePlayer()}
     else{
         setInfoLine("Esta letra ya ha sido dicha!")
+        shaker()
         const newArrayVidas = []
         for (let i = 0; i < numeroVidas; i++){
           newArrayVidas.push(true)
@@ -600,9 +609,10 @@ const submitText = (e) => {
       soundPlay(audioClips.fallo)
       setInfoLine("Parece que has fallado!")
       e.target[0].value = ""
+      shaker()
 
       if (!aloneGame) { 
-            return changePlayer()
+            return changePlayer(),shaker()
       }
       else {
             const newArrayVidas = []
@@ -655,7 +665,7 @@ console.log(`la ronda es de ${select} partidas`)
     <div>
   { ShowStart && <Start handleSelect={handleSelect} aloneGame={aloneGame} activatePlayer={activatePlayer} activateCall={activateCall} activateCall2={activateCall2} ganador={ganador} name={name} handleName={handleName} handleName2={handleName2} closeStart={closeStart} setShowStart={setShowStart}/>}
   <Panel soundPlay={soundPlay} audioClips={audioClips} datos={datos} setDatos={setDatos} setDichas={setDichas} letra={letra} />
-  <Presentador infoLine={infoLine}/>
+  <Presentador shake={shake} infoLine={infoLine}/>
   <Ruleta premios={premios} setx2={setx2} twoPlayerRules={twoPlayerRules} changePlayer={changePlayer} premio={premio} soundPlay={soundPlay} audioClips={audioClips} setInfoLine={setInfoLine} datos={datos} setPremio={setPremio} setDinero={setDinero}/>
   <Player name={name} name2={name2} playerOne={playerOne} playerTwo={playerTwo} aloneGame={aloneGame} submitText={submitText}vidas={vidas} letra={letra} submit={submit} handleInput={handleInput} dichas={dichas} setDichas={setDichas} dinero={dinero} dinero2={dinero2}/>
   <Footer tema={tema} ranking={ranking} setRanking={setRanking} panel={panel} listaFrases={listaFrases} />
