@@ -32,14 +32,14 @@ html{
   width: 100%;
   height: 100%;
   background:linear-gradient(88.56deg, #901a8a 29.09%, rgba(13, 183, 245, 1) 106.88%);
-  background-size: 108%;
+  background-size: 110%;
 }
 
 body{
   overflow-x: hidden;
   width:100%;
   height:100%;
-  margin-left: 4%;
+  margin-left: 8%;
   margin-top:2rem;
 }
 
@@ -633,8 +633,8 @@ display:none;
   position:absolute;
   top:0;
   left:0;
-  width:100%;
-  height:110%;
+  width:110%;
+  height:120%;
   background:rgba(0,0,0,0.55);
   display:grid;
   place-items:center;
@@ -744,7 +744,7 @@ bottom:0.8rem;
 
 
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 629px){
 
   html{
 
@@ -753,7 +753,7 @@ bottom:0.8rem;
   }
   
   body{
-    width: 100%;
+    width: 95%;
     height: 100%;
     margin-left: 1%;
     margin-top:1rem;
