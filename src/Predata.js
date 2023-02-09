@@ -86,26 +86,22 @@ export const listaFrases = [
 
 export function nuevaFraseNew(){
   const randomTema = Math.floor(Math.random()* listaFrases.length);
-  const randomFrase = Math.floor(Math.random()* listaFrases[randomTema].frases.length);
-  let tema3 = listaFrases[randomTema]
-  //console.log(tema3)
-  let frase = tema3.frases[randomFrase]
+  let temaRandom = listaFrases[randomTema]
+  const randomFrase = Math.floor(Math.random()* temaRandom.frases.length);
+  let frase = temaRandom.frases[randomFrase]
+  console.log(frase)
   return frase
 }
 
 
 
-export function calculoPanel(frase){
-  const randomTema = Math.floor(Math.random()* listaFrases.length);
-  const randomFrase = Math.floor(Math.random()* listaFrases[randomTema].frases.length);
-  frase = listaFrases[randomTema].frases[randomFrase]
+export function calculoPanel(){
 
-  const palabras = frase.toUpperCase().split(" ").reverse()
-  
-  const hileras = [
-    [],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+  const palabras = nuevaFraseNew().toUpperCase().split(" ").reverse()
+  console.log(palabras)
+  const hileras = [ [],[],[],[],[],[],[],[],[],[],[],[],[],[] ]
     // console.log(palabras)
-    const ponerPalabras = (hileras) => {
+    const ponerPalabras = () => {
       for (let i = palabras.length -1 ; i >= 0; i--){
         let letras = palabras[i].split("").reverse()
         for ( let j = 0; j < letras.length; j++){
@@ -115,11 +111,11 @@ export function calculoPanel(frase){
       }
       return hileras
     } 
-    ponerPalabras(hileras)
-    
+    ponerPalabras()
+    console.log(hileras.reverse())
     let myArray = []; 
     const prepararState = () => {
-      hileras.reverse().map((el, index) => {
+      hileras.map((el, index) => {
         return el[0] && el.map(ele => {   
           
           let obj= {  descubierto:false,
@@ -134,7 +130,7 @@ export function calculoPanel(frase){
         }
         prepararState()
         
-        
+        console.log(prepararState())
         let myArray2 = []
         const prepararState2 = ()=>{
           const referencia = palabras.reverse()
@@ -146,7 +142,7 @@ export function calculoPanel(frase){
           })
         }
         prepararState2()
-       
+        console.log(myArray2)
     return myArray2
         
 }

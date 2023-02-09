@@ -10,8 +10,8 @@ export function Player({name,name2,playerOne, playerTwo, aloneGame, submitText,v
     if(playerTwo){ return"resaltada cartera2"} else if(aloneGame){ return "noShow"}else{return "cartera2"}
   }
 
-  const onKeyUpevent = (event) => {
-    let keycode = event.keyCode;
+  const onKeyUpevent = (e) => {
+    let keycode = e.keyCode;
     if(keycode == '13'){
       console.log('You pressed a "enter" key in textbox'); 
     }
@@ -20,10 +20,11 @@ export function Player({name,name2,playerOne, playerTwo, aloneGame, submitText,v
   return (
     <div className="player">
       <div className="flex">
-      <span className='nombre'>{playerOne === true ? name : name2}</span>
+      <span className='nombre'>{playerOne === true && name }</span>
+      <span className='nombre2'>{playerTwo === false && name2 }</span>
         <form className="form" onSubmit={submit}>
             <input 
-                onKeyUp={()=>onKeyUpevent}
+                onKeyUp={(e)=>onKeyUpevent(e)}
                 id="letraInput"
                 maxLength="1"
                 className="input-letra"
@@ -42,7 +43,7 @@ export function Player({name,name2,playerOne, playerTwo, aloneGame, submitText,v
         </div>
       </div>
       <form className="flex" onSubmit={submitText}>
-        <textarea onKeyUp={()=>onKeyUpevent}></textarea>
+        <textarea onKeyUp={(e)=>onKeyUpevent(e)}></textarea>
         <button className="btn" style={{cursor:"pointer"}}>Resuelvo!</button>
       </form>
     </div>

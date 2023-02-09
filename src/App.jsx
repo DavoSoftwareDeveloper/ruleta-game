@@ -12,17 +12,7 @@ import {calculoPanel, listaFrases, nuevaFraseNew} from "./Predata.js"
 
 function App() {
 
-{/* const funciones = () => {
 
-    const dineroTotal = panel.reduce((sum,rank)=> sum + rank.dinero,0)
-    console.log(dineroTotal)
-    const panelTotal = panel.length
-    console.log(panelTotal)
-     const obj = {nombre:name, panelTotal:panelTotal, dineroTotal:dineroTotal} 
-     console.log(obj)
-    return obj
-}*/}
-console.log("re-render")
 const [arrayFrases, setArrayFrases] = useState(listaFrases)
 const [datos , setDatos] = useState(calculoPanel)
 const [vidas , setVidas] = useState([true,true,true])
@@ -129,15 +119,15 @@ const nuevaFrase = nuevaFrase2.join(" ")
 const totalVidas = vidas.length
 console.log(nuevaFrase)
 
-//console.log(`aloneGame = ${aloneGame}`)
+console.log(datos)
 //console.log(`countPanel = ${countPanel}`)
 
 const nombre = () =>{
   return playerOne ? name : name2;
 }
 const pasta = () =>{
-  console.log(`esto es desde la func PASTA = ${dinero}`)
-  console.log(`esto es desde la func PASTA 2 = ${dinero2}`)
+  // console.log(`esto es desde la func PASTA = ${dinero}`)
+  // console.log(`esto es desde la func PASTA 2 = ${dinero2}`)
   return playerOne ? dinero : dinero2;
 }
 

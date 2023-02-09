@@ -182,13 +182,17 @@ line-height: 1rem;
   text-shadow: 0px 0px 10px white;
 }
 
-.nombre{
+.nombre, .nombre2{
   color: white;
   position:absolute;
-  top: 9rem;
-  left: 20rem;
+  top: 6rem;
+  left: 21.5rem;
   font-family:"Contrail_One" ,'Courier New', Courier, monospace;
   font-size:1.8rem;
+}
+.nombre2{
+  top: 3rem;
+
 }
 
 #presentador{
@@ -250,7 +254,7 @@ textarea{
   display: flex;
   flex-direction: column;
   margin-left: 160px;
-  margin-bottom: -6px;
+  margin-bottom: 42px;
 }
 
 .letras-dichas{
@@ -274,7 +278,7 @@ textarea{
 
 .cartera, .cartera2, .cartera-alone{
   position:absolute;
-  left:16.7rem;
+  left:13.9rem;
   bottom:3.3rem;
   width: 100px;
   height: 30px;
@@ -644,7 +648,7 @@ display:none;
 .start-container{
   position:relative;
   margin-left: none;
-  width:50%;
+  width:auto;
   height:auto;
   overflow:visible;
   background:rgb(235, 235, 235);
@@ -744,7 +748,7 @@ bottom:0.8rem;
 
 
 
-@media screen and (max-width: 629px){
+@media screen and (max-width: 588px){
 
   html{
 
@@ -753,7 +757,7 @@ bottom:0.8rem;
   }
   
   body{
-    width: 95%;
+    width: 119%;
     height: 100%;
     margin-left: 1%;
     margin-top:1rem;
@@ -764,7 +768,7 @@ bottom:0.8rem;
     gap: 2px;
     flex-wrap:wrap;
     margin-left: 1px;
-    margin-right: 1px;
+    margin-right: 8px;
     align-items:flex-end;
      
   }
@@ -853,7 +857,7 @@ bottom:0.8rem;
     }
     
     .player {
-      width:65%;
+      width:75%;
       border-radius: 12px;
       border: 2px solid #616060;
       overflow:auto;
@@ -898,13 +902,17 @@ bottom:0.8rem;
       text-shadow: 0px 0px 10px white;
     }
     
-    .nombre{
+    .nombre, .nombre2{
       color: white;
       position:absolute;
-      top: 5rem;
+      top: 7rem;
       left: 13rem;
       font-family:"Contrail_One" ,'Courier New', Courier, monospace;
       font-size:1rem;
+    }
+    .nombre2{
+      top: 3.8rem;
+    
     }
     
     #presentador{
@@ -933,7 +941,7 @@ bottom:0.8rem;
     textarea{
       height:3rem;
       max-height:3rem;
-      width: 10rem;
+      width: 9.5rem;
     
     }
     
@@ -991,19 +999,16 @@ bottom:0.8rem;
     
     .cartera, .cartera2, .cartera-alone{
       position:absolute;
-      left:9.7rem;
+      left:10.7rem;
       bottom:3.3rem;
-      width: 80px;
-      height: 20px;
+      width: 60px;
+      height: 15px;
       background-color: rgb(0, 0, 0);
       color:#686868;
-      padding-top: 5px;
       padding-bottom: 8px;
-      padding-left: 3px;
       border-radius: 5px;
       font-size:1.2rem;
       font-family:"Orbitron", 'Courier New', Courier, monospace;
-      padding-right: 0.5rem;
       color:#D9D9D9;
     }
     
@@ -1040,8 +1045,8 @@ bottom:0.8rem;
 
     .start-overlay{
       position:absolute;
-      width:101%;
-      height:101%;
+      width:122%;
+      height:150%;
       background:rgba(0,0,0,0.55);
       display:grid;
       place-items:center;
@@ -1057,7 +1062,7 @@ bottom:0.8rem;
       background:rgb(235, 235, 235);
       border-radius:1rem;
       z-index:150;
-      padding:1rem;
+      padding:2rem;
       text-align: center;
     }
     .start-img{

@@ -21,10 +21,10 @@ export function Start({handleSelect,aloneGame,closeStart,name,name2,handleName,h
                       <div className={!aloneGame && !activateCall2?"selector":"noShow"}>
                         <label htmlFor="duration"> Al mejor de: </label>
                         <select name="duration" id="duration" onChange={handleSelect}>
-                          <option value="10">10</option>
-                          <option value="1">1</option>
-                          <option value="3">3</option>
-                          <option value="5">5</option>
+                          <option value="10">1</option>
+                          <option value="1">3</option>
+                          <option value="3">5</option>
+                          <option value="5">10</option>
                         </select>
                       </div>
                     </div>
